@@ -1,0 +1,22 @@
+#Makefile for mypipes
+NAME = myminishell
+SRC = myminishell.c
+OBJ = $(SRC:.c=.o)
+LIBS = -lmy
+LIBPATH = ../lib/
+RM = rm -f
+
+all: $(OBJ)
+        cc -L$(LIBPATH) $(OBJ) $(LIBS)
+
+clean:
+        -$(RM) *.o
+        -$(RM) *~
+        -$(RM) \#*
+        -$(RM) *.core
+        -$(RM) *.swp
+
+fclean: clean
+        -$(RM) $(LIBPATH)/$(NAME)
+
+re: fclean all

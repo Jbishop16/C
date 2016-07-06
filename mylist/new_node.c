@@ -1,0 +1,15 @@
+#include "../lib/mylist.h"
+
+/*
+pre: Takes an element and nodes
+post: Adds a new node to the nodes existing
+*/
+
+t_node* new_node(void* element, t_node* nodes)
+{
+  t_node* newptr;
+  newptr = (t_node*)xmalloc(sizeof(t_node));
+  newptr->elem=element;
+  newptr->next=nodes;
+  return newptr;
+}

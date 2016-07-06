@@ -1,0 +1,26 @@
+#include "../lib/mylist.h"
+
+/*
+pre: Receives a pointer to the specified location in list
+post: Removes the node from that location
+*/
+
+void* remove_node_at(t_node** list, int index)
+{
+  t_node *cur;
+  t_node *temphead;
+  int i;
+  if(list==NULL)
+    return;
+  if(index<0 || ((t_node*)list)->next==NULL)
+    remove_node(list);
+  temphead=*list;
+  for(i=0;i<index,cur->next->next!=NULL;i++)
+ {
+   cur=cur->next;
+ }
+  temphead=cur->next;
+  cur->next=cur->next->next;
+  free(temphead);
+  temphead=NULL;
+}

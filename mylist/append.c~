@@ -1,0 +1,22 @@
+#include "../lib/mylist.h"
+
+/*
+pre: Takes a node and a list of nodes
+post: Adds the node at the end of the list
+*/
+
+void append(t_node* node, t_node** list)
+{
+  int i; 
+  t_node* cur;
+ if(node == NULL)
+   return;
+ if(*list==NULL)
+   {
+     *list=node;
+     return;
+   }
+ for(i=0;cur->next->next!=NULL;i++)
+   cur=cur->next;
+ cur->next=node;
+}

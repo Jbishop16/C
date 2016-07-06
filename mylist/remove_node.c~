@@ -1,0 +1,18 @@
+#include "../lib/mylist.h"
+
+/*
+pre: Receives a pointer to head of list
+post: Removes node at beginning
+*/
+
+void* remove_node(t_node** list)
+{
+  t_node *cur;
+  t_node *temphead;
+  if(list==NULL)
+    return;
+  temphead=*list;
+  cur->next=cur->next->next;
+  free(temphead);
+  temphead=NULL;
+}

@@ -1,0 +1,20 @@
+#include "../lib/mylist.h"
+
+/*
+pre: Takes a list of nodes
+post: Removes the last node in that list
+*/
+
+void* remove_last(t_node** list)
+{
+  t_node* cur;
+  int i;
+  if(list==NULL || *list==NULL)
+    return;
+  if(((t_node*)list)->next==NULL)
+    remove_node(list);
+  for(i=0;cur->next->next!=NULL;i++)
+    cur=cur->next;
+  free(cur->next);
+  cur->next=NULL;
+}

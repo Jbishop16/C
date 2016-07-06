@@ -1,0 +1,22 @@
+#include "../lib/my.h"
+
+/*
+pre: Takes a string of characters
+post: Prints the length of the string
+*/
+
+int my_strlen(char* c)
+{
+  int i;
+  int len;
+  if(c==NULL)
+    return;
+  while(c[i])
+    {
+      for(i=0;c[i];i++)
+	{
+	  len++;
+	}
+    }
+  return len;
+}

@@ -1,0 +1,13 @@
+#include "../lib/my.h"
+
+/*
+pre: Nothing is inputted 
+post: Prints out the alphabet
+*/
+
+void my_alpha()
+{
+  char i;
+  for(i='a';i<='z';i++)
+    my_char(i);
+}

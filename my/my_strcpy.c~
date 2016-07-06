@@ -1,0 +1,25 @@
+#include "../lib/my.h"
+
+/* 
+pre: Takes two separate strings
+post: Overwrites the first string with the second and returns the first
+*/
+
+char* my_strcpy(char* tgt, char* src)
+{
+  int i;
+  my_str("i declared\n");
+  if(src==NULL || src[0]=='\0')
+    {
+      tgt[0]='\0';
+      return tgt;
+    }
+  my_str("NULL condition\n");
+  for(i=0;src[i]!='\0';i++)
+    {
+      tgt[i]=src[i];
+    }
+  my_str("Please no seg\n");
+  tgt[i]='\0';
+  return tgt;
+}

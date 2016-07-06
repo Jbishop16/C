@@ -1,0 +1,20 @@
+#include "../lib/my.h"
+
+/* pre: Inputs an Integer
+   post: Prints it */
+
+void my_int(int n)
+{
+  unsigned int u;
+  unsigned int e;
+  u=n;
+  if(n<0)
+    {
+      my_char('-');
+      u=-n;
+    }
+  for(e=1;(u/e)>=10;e*=10)
+    ;
+  for(;e;u%=e,e/=10)
+    my_char('0'+(u/e));
+}

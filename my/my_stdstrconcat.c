@@ -1,0 +1,11 @@
+#include "../lib/my.h"
+
+/*
+pre: Takes two strings and an integer as input
+post: Returns the first string and the specified number of characters from the second string into a newly allocated string in standard form
+*/
+
+char* my_stdstrconcat(char* s1, char* s2, int n)
+{
+  my_strnconcat(s1, s2, n);
+}

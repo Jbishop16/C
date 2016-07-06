@@ -1,0 +1,14 @@
+#include "../lib/my.h"
+
+/*
+pre: Takes two strings as input
+post: Returns a new combined string of the inputs after allocating enough room for it
+*/
+
+char* my_strconcat(char* s1, char* s2)
+{
+  my_str(s1);
+  my_str(s2);
+  return s1;
+  return s2;
+}

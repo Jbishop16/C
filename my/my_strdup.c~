@@ -1,0 +1,16 @@
+#include "../lib/my.h"
+
+/*
+pre: Inputs a string
+post: Duplicates it
+*/
+
+char* my_strdup(char* c)
+{/*
+  if(c==NULL)
+    return NULL;
+  char* x = (char**)xmalloc
+ */
+  char* s3;
+  return s3;
+}

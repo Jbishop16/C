@@ -1,0 +1,15 @@
+#include "../lib/my.h"
+
+/*
+pre: Takes two strings and an integer as input
+post: Returns the entire first string and only the specified first amount of characters in the second string into a newly allocated string.
+*/
+
+char* my_strnconcat(char* s1, char* s2, int n)
+{
+  my_str(s1);
+  my_str(s2);
+  my_int(n);
+  return s1;
+  return s2;
+}

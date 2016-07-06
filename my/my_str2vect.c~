@@ -1,0 +1,61 @@
+#include "../lib/my.h"
+/*
+pre: Takes a string 
+post: Returns a vector
+*/
+
+char** my_str2vect(char* string)
+{
+  unsigned int i = 0; // counter
+  char flag;// flag to test if changing from spaces to a string
+  unsigned int s = 0;// count for number of strings
+  unsigned int w; // word counter
+  unsigned int end;// beginning of word index
+  unsigned int bak;// number of strings
+
+  for(; *(string) == ' ' || *(string) == '\t'; string++);
+  for(s=1, i=0, flag=1; string[i]!='\0'; i++)
+    {
+      if(string[i] == ' ' || string[i] == '\t')
+	{
+	  if(flag==1)
+	    flag=0;
+	}
+      else if(string[i] != ' ' && string[i] != '\t')
+	{
+	  if(flag==0)
+	    {
+	      flag=1;
+	      s++;
+	    }
+	}
+    }
+  bak=s;
+  char** ret = (char**)xmalloc((s+1)*sizeof(char*));
+  for(end=0, w=0, s=0, i=0, flag=1; string[i]!='\0'; i++)
+    {
+      if(string[i] == ' ' || string[i] == '\t')
+	{
+	  if(flag==1)
+	    {
+	      flag=0;
+	      ret[s] = (char*)xmalloc(sizeof(char)*(w+1));
+	      ret[s++] = my_strnconcat(&string[end],"\0", w);
+	    }
+	}
+      else if(string[i] != ' ' && string[i] != '\t')
+	{
+	  if(flag==0)
+	    {
+	      flag=1;
+	      w=0;
+	      end = i;
+	    }
+	  w++;
+	}
+    }
+  ret[s] = (char*)xmalloc(sizeof(char)*(w+1));
+  ret[s++] = my_strnconcat(&string[end],"\0", w);
+  ret[bak] = NULL;
+  return ret;
+}

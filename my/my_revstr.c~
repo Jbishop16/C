@@ -1,0 +1,19 @@
+#include "../lib/my.h"
+
+/*
+pre: Takes a string of characters
+post: Prints the string in reverse
+*/
+
+int my_revstr(char* c)
+{
+  int i;
+  int l;
+  for(i=0, l=my_strlen(c)-1;i<(l-i);i++)
+    {
+      c[i]^=c[l-i];
+      c[l-i]^=c[i];
+      c[i]^=c[l-i];
+    }
+  return l-i;
+}

@@ -1,0 +1,10 @@
+#include "../lib/my.h"
+{
+  int i;
+  int ret = -1;
+  if(s!=NULL)
+    for(i=0; s[i]!='\0'; i++)
+      if(s[i]==c)
+	ret=i;
+  return ret;
+}
